@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Özür Dilerim</title>
+    <link rel="icon" href="https://media.giphy.com/media/wYzNWKJ2jU4rNX6SAO/giphy.gif" type="image/gif">
+</head>
+<body>
+    <div class="container">
+        <img id="resim" src="hamster.gif">
+        <h1 id="metin" class="metin">Kanka bugün ya da başka zaman seni üzdüysem özür dilerim</h1>
+        <button id="buton" class="buton">Sıradaki</button>
+    </div>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffc5fe;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+        }
+        #resim {
+            width: 350px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .metin {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+        .buton {
+            padding: 16px 24px;
+            font-size: 24px;
+            cursor: pointer;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+            border: 5px solid #db2ab8;
+            border-radius: 40px;
+            background-color: #ff69b4;
+        }
+    </style>
+    <script>
+        const buton = document.getElementById("buton");
+        const metin = document.getElementById("metin");
+        const resim = document.getElementById("resim");
+        let tekrar = 0;
+
+        buton.addEventListener("click", function() {
+            if (tekrar === 0) {
+                metin.textContent = "Seni üzdüysem gerçekten çok üzgünüm";
+                resim.src = "kedi.gif";
+                tekrar++;
+            } else if (tekrar === 1) {
+                metin.textContent = "Umarım bana üzgün veya sinirli değilsindir";
+                resim.src = "agla1.gif";
+                tekrar++;
+            } else if (tekrar === 2) {
+                metin.textContent = "Yoksa seni üzdüysem gerçekten çok üzgünüm";
+                resim.src = "agla2.gif";
+                tekrar++;
+            } else if (tekrar === 3) {
+                metin.textContent = "Gerçekten özür dilerim";
+                resim.src = "ozur.gif";
+                tekrar++;
+            } else if (tekrar === 4) {
+                metin.textContent = "Beni affeder misin?(Affetmezsen butona basma)";
+                resim.src = "cicek.gif";
+                tekrar++;
+                buton.textContent = "Affettim";
+            } else {
+                metin.textContent = "Affettiğin için çok mutluyum en sevdiğim kankamsın";
+                resim.src = "mutlu.gif";
+                buton.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>
